@@ -13,7 +13,7 @@ var Router = {
   get: function(req, res) {
     Router.lookup(req, function(code, route) {
       if (code === 404) {
-        res.writeHead(404, {'Content-Type': 'text/plain'});
+        res.writeHead(404, {'Content-Type': 'text/html'});
         res.end('bad');
       }
       if (code === 200) {
@@ -28,7 +28,7 @@ var Router = {
         routeList = Router.routes
 
     for (var ii = 0; ii < routeList.length; ii++) {
-      var route = this._parseRoutes(routeList[ii]),
+      var route = Router._parseRoutes(routeList[ii]),
           matchedRoute;
 
       if (route.ctrlName === path) {

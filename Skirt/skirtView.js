@@ -8,7 +8,7 @@ var SkirtView = {
 
     fs.readFile(viewPath, function(err, data) {
 
-      if (err) return;
+      if (err) throw err;
 
       res.writeHead(200, {'Content-Type': 'text/html', 'Content-Length': data.length})
       res.write(data)
