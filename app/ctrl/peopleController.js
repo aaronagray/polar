@@ -1,10 +1,8 @@
-fs = require('fs')
-view = require('../../Skirt/skirtView').SkirtView
+var View = require('polar').View
 
 var peopleController = {
-  index: function(res) {
-    console.log('from people ctrl')
-    view.render('people', 'index', res)
+  index: function(req, res) {
+    View.render('people', 'index', res);
   }
 }
 

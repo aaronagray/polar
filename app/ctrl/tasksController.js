@@ -1,10 +1,10 @@
-fs = require('fs')
-view = require('../../Skirt/skirtView').SkirtView
+var view = require('polar').View
+
+console.log(view)
 
 var tasksController = {
-  index: function(res) {
-    console.log('from tasks ctrl')
-    view.render('tasks', 'index', res)
+  index: function(req, res) {
+    view.render('tasks', 'tasks', res)
   }
 }
 
